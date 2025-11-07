@@ -1,0 +1,94 @@
+aside {
+    background-color: #2E3A60;
+    color: #fff;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #212C4D !important;
+    background-color: transparent !important;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side-devider {
+    height: .25rem;
+    border-radius: .25rem;
+    background-color: #212C4D;
+}
+
+.icon-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #212C4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active .icon-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #2E3A60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-icon-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #212C4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active .sub-icon-box {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #2E3A60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-box {
+    transition: .15s;
+    border-radius: 15px;
+    font-size: .875rem;
+}
+
+.menu-box:hover {
+    background-color: #212C4D;
+    border-radius: 15px;
+    transition: .15s;
+}
+
+.menu-box:hover .icon-box, .menu-box:hover .sub-icon-box {
+    background-color: #2E3A60;
+    transition: .15s;
+}
+
+.menu-box.active {
+    border-radius: 15px;
+    background-color: #212C4D;
+}
+
+.dropdown-menu.show {
+    animation: slideDown 0.15s ease-in-out;
+}

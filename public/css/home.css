@@ -1,0 +1,23 @@
+.quote-card {
+    background-color: #2E3A60;
+    border-radius: 20px;
+}
+
+.quote-card textarea {
+    background-color: #2E3A60;
+    border: none;
+    resize: none;
+}
+
+.quote-card textarea:focus {
+    background-color: #2E3A60;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+}
+
+.quote-card textarea::placeholder {
+    color: #AEB8D0;
+    opacity: 1;
+}
