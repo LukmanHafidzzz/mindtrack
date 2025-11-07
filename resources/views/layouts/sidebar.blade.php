@@ -3,7 +3,7 @@
         <div class="">
             <div class="profile-pic">
                 {{-- <i class="bi bi-person-fill fs-1"></i> --}}
-                <img src="{{ asset("photoProfiles/sigma.png") }}" alt="" srcset="" class="w-100">
+                <img src="{{ asset("photoProfiles/profile-2.jpg") }}" alt="" srcset="" class="w-100">
             </div>
         </div>
         <div class="ms-4">
