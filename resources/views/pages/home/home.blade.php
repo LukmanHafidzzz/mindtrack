@@ -38,19 +38,44 @@
             </ul>
         </div>
     </section>
+
+    <div class="card calendar-card text-white text-center p-3 mt-5">
+        <div class="card-body">
+            <div id="calendar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="calendarModalLabel">Daily Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body custom-list">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Mood:</strong> <span id="moodText">😊 Feeling great!</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Task:</strong> <span id="taskText">Finish project report and team meeting</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Journal:</strong> <span id="journalText">Had a productive day, learned new things!</span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Achievement:</strong> <span id="achievementText">Completed coding milestone ahead of time</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        new Splide('.splide', {
-        type: 'loop',
-        perPage: 1,
-        pagination: false,
-        }).mount();
-    });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.js"></script>
+<script src="{{ asset('js/home.js') }}"></script>
 @endsection
