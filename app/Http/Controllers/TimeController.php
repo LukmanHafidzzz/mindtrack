@@ -11,7 +11,7 @@ class TimeController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.time.time');
     }
 
     /**

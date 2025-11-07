@@ -11,7 +11,7 @@ class MoodController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.mood.mood');
     }
 
     /**
@@ -27,7 +27,7 @@ class MoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('pages.mood.mood-response');
     }
 
     /**
