@@ -3,7 +3,7 @@
 @section('title', 'Time Me - MindTrack')
 
 @section('styles')
-{{-- <link rel="stylesheet" href="{{ asset('css/achievement.css') }}"> --}}
+<link rel="stylesheet" href="{{ asset('css/time.css') }}">
 @endsection
 
 @section('pageHeader')
@@ -11,4 +11,55 @@
     <h1 class="mb-2">Time Me</h1>
     <h5>Stay on track, or challenge yourself.</h5>
 </div>
+@endsection
+
+@section('content')
+<div class="px-5">
+    <div class="card time-card text-white text-center p-4">
+        <div class="card-body">
+            <ul class="nav nav-tabs justify-content-center mb-4 custom-tabs" id="timeTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="timer-tab" data-bs-toggle="tab" data-bs-target="#timer-section" type="button" role="tab" aria-controls="timer-section" aria-selected="true">
+                        ⏲ Timer
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="stopwatch-tab" data-bs-toggle="tab" data-bs-target="#stopwatch-section" type="button" role="tab" aria-controls="stopwatch-section" aria-selected="false">
+                        ⏱ Stopwatch
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="timeTabContent">
+                <div class="tab-pane fade show active" id="timer-section" role="tabpanel" aria-labelledby="timer-tab">
+                    <div class="d-flex justify-content-center gap-2 mb-3">
+                        <input type="number" id="input-hours" class="form-control form-control-sm custom-input w-25" placeholder="hours" min="0" max="23">
+                        <input type="number" id="input-minutes" class="form-control form-control-sm custom-input w-25" placeholder="minutes" min="0" max="59">
+                        <input type="number" id="input-seconds" class="form-control form-control-sm custom-input w-25" placeholder="seconds" min="0" max="59">
+                    </div>
+                    <div class="mb-3">
+                        <button id="set-timer" class="btn custom-btn btn-sm">Set</button>
+                    </div>
+                    <div id="timer-display" class="display-5 mb-2">00:00:00</div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button id="start-timer" class="btn custom-btn btn-sm">Start</button>
+                        <button id="pause-timer" class="btn custom-btn btn-sm">Pause</button>
+                        <button id="reset-timer" class="btn custom-btn btn-sm">Reset</button>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="stopwatch-section" role="tabpanel" aria-labelledby="stopwatch-tab">
+                    <div id="stopwatch-display" class="display-5 mb-2">00:00:00</div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button id="start-stopwatch" class="btn custom-btn btn-sm">Start</button>
+                        <button id="pause-stopwatch" class="btn custom-btn btn-sm">Pause</button>
+                        <button id="reset-stopwatch" class="btn custom-btn btn-sm">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/time.js') }}"></script>
 @endsection
