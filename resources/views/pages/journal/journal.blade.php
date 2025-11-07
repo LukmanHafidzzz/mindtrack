@@ -18,7 +18,7 @@
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <div class="fw-medium">Last saved: 07/11/2025</div>
         <a href="#" class="btn journal-btn px-3 py-2">
-            <div>New journal</div>
+            <div>Add journal</div>
         </a>
     </div>
     <div class="card journal-bg text-white p-3">

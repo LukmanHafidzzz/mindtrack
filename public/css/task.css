@@ -1,0 +1,152 @@
+.task-card {
+    background-color: #395886;
+    border-radius: 20px;
+}
+
+.add-task-btn {
+    background-color: #395886;
+    color: #fff;
+}
+
+.add-task-btn:hover {
+    background-color: #638ECB;
+    color: #fff;
+}
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox:hover .checkmark {
+    border-color: #638ECB;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #638ECB;
+    border-color: #638ECB;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    width: 7px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    display: block;
+}
+
+.task-modal .modal-content {
+    background-color: #395886;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+}
+
+.task-modal .modal-header {
+    border-bottom: none;
+    background-color: #395886;
+    color: #fff;
+}
+
+.task-modal .modal-title {
+    color: #fff;
+}
+
+.task-modal .modal-body {
+    background-color: #395886;
+    color: #fff;
+}
+
+.task-modal .modal-footer {
+    border-top: none;
+    background-color: #395886;
+}
+
+.task-modal .btn-primary {
+    background-color: #638ECB;
+    border: none;
+    color: #fff;
+}
+
+.task-modal .btn-primary:hover {
+    background-color: #7EA6D9;
+    color: #fff;
+}
+
+.task-modal .btn-secondary {
+    background-color: #2E4374;
+    border: none;
+    color: #fff;
+}
+
+.task-modal .btn-secondary:hover {
+    background-color: #4768A0;
+    color: #fff;
+}
+
+.task-modal .btn-close {
+    filter: invert(1);
+}
+
+.task-modal .form-floating .form-control {
+    background-color: #2E4374; /* sedikit lebih gelap dari modal agar kontras */
+    color: #fff; /* teks putih */
+    border: 1px solid #638ECB; /* outline biru muda */
+    border-radius: 10px;
+}
+
+/* Placeholder dan label */
+.task-modal .form-floating label {
+    color: #d0d8f0; /* label sedikit lembut */
+}
+
+/* Saat input fokus */
+.task-modal .form-floating .form-control:focus {
+    background-color: #324A7A;
+    border-color: #7EA6D9;
+    box-shadow: 0 0 0 0.2rem rgba(99, 142, 203, 0.25);
+    color: #fff;
+}
+
+/* Placeholder warna lembut */
+.task-modal .form-floating .form-control::placeholder {
+    color: #b0bedb;
+    opacity: 1; /* agar terlihat */
+}
+
+/* Ubah warna border ketika hover */
+.task-modal .form-floating .form-control:hover {
+    border-color: #7EA6D9;
+}
