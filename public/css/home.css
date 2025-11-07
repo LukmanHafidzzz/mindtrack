@@ -1,16 +1,16 @@
 .quote-card {
-    background-color: #2E3A60;
+    background-color: #395886;
     border-radius: 20px;
 }
 
 .quote-card textarea {
-    background-color: #2E3A60;
+    background-color: #395886;
     border: none;
     resize: none;
 }
 
 .quote-card textarea:focus {
-    background-color: #2E3A60;
+    background-color: #395886;
     border: none;
     outline: none;
     box-shadow: none;

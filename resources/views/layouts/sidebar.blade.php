@@ -1,4 +1,4 @@
-<aside class="p-3 vh-100">
+<aside class="p-3 h-100 min-vh-100">
     <div class="d-flex align-items-center ">
         <div class="">
             <div class="profile-pic">

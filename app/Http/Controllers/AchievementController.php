@@ -11,7 +11,7 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.achievement.achievement');
     }
 
     /**

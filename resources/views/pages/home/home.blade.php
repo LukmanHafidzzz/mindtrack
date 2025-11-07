@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Home - MindTrack')
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -16,12 +16,6 @@
 
 @section('content')
 <div class="px-5">
-    {{-- <div class="card quote-card text-white text-center p-3">
-        <div class="card-body">
-            <h5 class="card-title mb-3">Any words to keep you going?</h5>
-            <textarea class="form-control text-center text-white" placeholder="insert here. . . .  (300 max)" aria-label="With textarea" rows="4"></textarea>
-        </div>
-    </div> --}}
     <section class="splide" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
             <ul class="splide__list">
