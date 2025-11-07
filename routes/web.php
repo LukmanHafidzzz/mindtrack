@@ -6,6 +6,7 @@ use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\TimeController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\MoodController;
+use App\Http\Controllers\JournalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,3 +18,4 @@ Route::get('/time-me', [TimeController::class, 'index'])->name('time-me');
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks');
 Route::get('/mood', [MoodController::class, 'index'])->name('mood');
 Route::get('/mood/mood-response', [MoodController::class, 'store'])->name('mood.response');
+Route::get('/journals', [JournalController::class, 'index'])->name('journal');
