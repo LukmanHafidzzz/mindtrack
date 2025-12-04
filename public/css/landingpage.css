@@ -1,0 +1,39 @@
+.btn-signup {
+    background: #00D1FF;
+    border: none;
+    color: #212C4D;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-signup:hover {
+    background: #00B5DF;
+    transform: translateY(-2px);
+    color: #212C4D;
+}
+
+.btn-login {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-login:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    color: #ffffff;
+}

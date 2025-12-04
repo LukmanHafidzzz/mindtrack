@@ -26,12 +26,12 @@
                             Choose grade
                         </option>
 
-                        <option value="7"  {{ (isset($profile) && $profile->grade == '7')  ? 'selected' : '' }}>7th Grade</option>
-                        <option value="8"  {{ (isset($profile) && $profile->grade == '8')  ? 'selected' : '' }}>8th Grade</option>
-                        <option value="9"  {{ (isset($profile) && $profile->grade == '9')  ? 'selected' : '' }}>9th Grade</option>
-                        <option value="10" {{ (isset($profile) && $profile->grade == '10') ? 'selected' : '' }}>10th Grade</option>
-                        <option value="11" {{ (isset($profile) && $profile->grade == '11') ? 'selected' : '' }}>11th Grade</option>
-                        <option value="12" {{ (isset($profile) && $profile->grade == '12') ? 'selected' : '' }}>12th Grade</option>
+                        <option value="Grade 7"  {{ (isset($profile) && $profile->grade == 'Grade 7')  ? 'selected' : '' }}>7th Grade</option>
+                        <option value="Grade 8"  {{ (isset($profile) && $profile->grade == 'Grade 8')  ? 'selected' : '' }}>8th Grade</option>
+                        <option value="Grade 9"  {{ (isset($profile) && $profile->grade == 'Grade 9')  ? 'selected' : '' }}>9th Grade</option>
+                        <option value="Grade 10" {{ (isset($profile) && $profile->grade == 'Grade 10') ? 'selected' : '' }}>10th Grade</option>
+                        <option value="Grade 11" {{ (isset($profile) && $profile->grade == 'Grade 11') ? 'selected' : '' }}>11th Grade</option>
+                        <option value="Grade 12" {{ (isset($profile) && $profile->grade == 'Grade 12') ? 'selected' : '' }}>12th Grade</option>
                     </select>
                 </div>
 
