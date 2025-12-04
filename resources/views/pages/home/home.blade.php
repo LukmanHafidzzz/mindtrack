@@ -23,7 +23,7 @@
                     <div class="card quote-card text-white text-center p-3">
                         <div class="card-body">
                             <h5 class="card-title mb-3">Any words to keep you going?</h5>
-                            <textarea class="form-control text-center px-3 text-white" placeholder="insert here. . . .  (300 max)" aria-label="With textarea" rows="4"></textarea>
+                            <textarea id="dailyWords" class="form-control text-center px-3 text-white" placeholder="insert here. . . .  (300 max)" aria-label="With textarea" rows="4"></textarea>
                         </div>
                     </div>
                 </li>
@@ -31,7 +31,7 @@
                     <div class="card quote-card text-white text-center p-3">
                         <div class="card-body">
                             <h5 class="card-title mb-3">Quote of the day</h5>
-                            <textarea class="form-control text-center px-3 text-white" placeholder="insert here. . . .  (300 max)" aria-label="With textarea" rows="4">Believe you can and you're halfway there.</textarea>
+                            <textarea class="form-control text-center px-3 text-white" aria-label="With textarea" rows="4">{{ $quotes->content ?? 'No quote available.' }}</textarea>
                         </div>
                     </div>
                 </li>
@@ -56,16 +56,19 @@
             <div class="modal-body custom-list">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        <strong>Mood:</strong> <span id="moodText">😊 Feeling great!</span>
+                        <strong>Mood:</strong> <span id="moodText"></span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Task:</strong> <span id="taskText">Finish project report and team meeting</span>
+                        <strong>Task:</strong> <span id="taskText"></span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Journal:</strong> <span id="journalText">Had a productive day, learned new things!</span>
+                        <strong>Journal:</strong> <span id="journalText"></span>
                     </li>
                     <li class="list-group-item">
-                        <strong>Achievement:</strong> <span id="achievementText">Completed coding milestone ahead of time</span>
+                        <strong>Achievement:</strong> <span id="achievementText"></span>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Focus Time:</strong> <span id="focusTimeText"></span>
                     </li>
                 </ul>
             </div>

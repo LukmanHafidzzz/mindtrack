@@ -14,7 +14,7 @@
 }
 
 .journal-card {
-    background-color: #638ECB;
+    background-color: #446597;
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -34,4 +34,121 @@
     border: none;
     transform: scale(1);
     transform-origin: top left;
+}
+
+.journal-modal .modal-content {
+    background-color: #395886;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+}
+
+.journal-modal .modal-header {
+    border-bottom: none;
+    background-color: #395886;
+    color: #fff;
+}
+
+.journal-modal .modal-title {
+    color: #fff;
+}
+
+.journal-modal .modal-body {
+    background-color: #395886;
+    color: #fff;
+}
+
+.journal-modal .modal-footer {
+    border-top: none;
+    background-color: #395886;
+}
+
+.journal-modal .btn-primary {
+    background-color: #638ECB;
+    border: none;
+    color: #fff;
+}
+
+.journal-modal .btn-primary:hover {
+    background-color: #7EA6D9;
+    color: #fff;
+}
+
+.journal-modal .btn-secondary {
+    background-color: #2E4374;
+    border: none;
+    color: #fff;
+}
+
+.journal-modal .btn-secondary:hover {
+    background-color: #4768A0;
+    color: #fff;
+}
+
+.journal-modal .btn-close {
+    filter: invert(1);
+}
+
+.journal-modal .form-control {
+    background-color: #2E4374;
+    color: #fff;
+    border: 1px solid #638ECB;
+    border-radius: 10px;
+}
+
+.journal-modal label {
+    color: #d0d8f0;
+}
+
+.journal-modal .form-control:focus {
+    background-color: #324A7A;
+    border-color: #7EA6D9;
+    box-shadow: 0 0 0 0.2rem rgba(99, 142, 203, 0.25);
+    color: #fff;
+}
+
+.journal-modal .form-control::placeholder {
+    color: #b0bedb;
+    opacity: 1;
+}
+
+.journal-modal .form-control:hover {
+    border-color: #7EA6D9;
+}
+
+.journal-file-wrapper .form-label {
+    color: #d0d8f0;
+}
+
+.journal-file-input {
+    display: none;
+}
+
+.journal-file-btn {
+    width: 100%;
+    background-color: #2E4374;
+    border: 1px solid #638ECB;
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    color: #d0d8f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.journal-file-btn:hover {
+    border-color: #7EA6D9;
+    background-color: #324A7A;
+}
+
+.read-btn {
+    background-color: #638ECB;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.read-btn:hover {
+    transform: translateY(-5px);
+    background-color: #638ECB;
+    color: #fff;
 }

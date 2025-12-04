@@ -20,34 +20,58 @@
         <div class="container text-center h-100">
             <div class="row align-items-stretch h-100">
                 <div class="col d-flex flex-column justify-content-center pb-5">
-                    <a type="button" class="btn" href="{{ route('mood.response') }}">
-                        <img src="{{ asset('mood/satisfied.png') }}" alt="satisfied" width="100">
-                        <h6 class="text-white mt-2">I'm satisfied</h6>
-                    </a>
+                    <form action="{{ route('mood.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mood" value="satisfied">
+                        <button type="submit" class="btn">
+                            <img src="{{ asset('mood/satisfied.png') }}" width="100">
+                            <h6 class="text-white mt-2">I'm satisfied</h6>
+                        </button>
+                    </form>
                 </div>
+
                 <div class="col d-flex flex-column justify-content-center pt-5">
-                    <a type="button" class="btn" href="{{ route('mood.response') }}">
-                        <img src="{{ asset('mood/content.png') }}" alt="content" width="100">
-                        <h6 class="text-white mt-2">I'm content</h6>
-                    </a>
+                    <form action="{{ route('mood.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mood" value="content">
+                        <button type="submit" class="btn">
+                            <img src="{{ asset('mood/content.png') }}" width="100">
+                            <h6 class="text-white mt-2">I'm content</h6>
+                        </button>
+                    </form>
                 </div>
+
                 <div class="col d-flex flex-column justify-content-center pb-5">
-                    <a type="button" class="btn" href="{{ route('mood.response') }}">
-                        <img src="{{ asset('mood/okay.png') }}" alt="okay" width="100">
-                        <h6 class="text-white mt-2">I'm okay</h6>
-                    </a>
+                    <form action="{{ route('mood.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mood" value="okay">
+                        <button type="submit" class="btn">
+                            <img src="{{ asset('mood/okay.png') }}" width="100">
+                            <h6 class="text-white mt-2">I'm okay</h6>
+                        </button>
+                    </form>
                 </div>
+
                 <div class="col d-flex flex-column justify-content-center pt-5">
-                    <a type="button" class="btn" href="{{ route('mood.response') }}">
-                        <img src="{{ asset('mood/troubled.png') }}" alt="troubled" width="100">
-                        <h6 class="text-white mt-2">I'm troubled</h6>
-                    </a>
+                    <form action="{{ route('mood.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mood" value="troubled">
+                        <button type="submit" class="btn">
+                            <img src="{{ asset('mood/troubled.png') }}" width="100">
+                            <h6 class="text-white mt-2">I'm troubled</h6>
+                        </button>
+                    </form>
                 </div>
+
                 <div class="col d-flex flex-column justify-content-center pb-5">
-                    <a type="button" class="btn" href="{{ route('mood.response') }}">
-                        <img src="{{ asset('mood/dissatisfied.png') }}" alt="dissatisfied" width="100">
-                        <h6 class="text-white mt-2">I'm dissatisfied</h6>
-                    </a>
+                    <form action="{{ route('mood.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="mood" value="dissatisfied">
+                        <button type="submit" class="btn">
+                            <img src="{{ asset('mood/dissatisfied.png') }}" width="100">
+                            <h6 class="text-white mt-2">I'm dissatisfied</h6>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

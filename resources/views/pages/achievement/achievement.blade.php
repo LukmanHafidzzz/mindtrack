@@ -18,51 +18,35 @@
     <div class="card achievement-bg text-white text-center p-3">
         <div class="card-body">
             <div class="row g-3">
-                <div class="col-md-4">
-                    <div class="card achievement-card text-white">
-                        <div class="card-body">
-                            <i class="bi bi-lightbulb fs-1"></i>
-                            <h6 class="card-title">Focus Master!</h6>
-                            <p class="card-text fs-7">
-                                You stayed focused for an hour straight. That’s some real discipline — impressive!
-                            </p>
-                        </div>
+
+                @forelse ($achievements as $category => $items)
+
+                    @php
+                        $config = config("achievements.categories.$category");
+                    @endphp
+
+                    @if ($config)
+                        @foreach ($items as $achievement)
+                            <div class="col-md-4">
+                                <div class="card achievement-card h-100 text-white">
+                                    <div class="card-body">
+                                        <i class="bi {{ $config['icon'] }} fs-1"></i>
+                                        <h6 class="card-title">{{ $config['title'] }}</h6>
+                                        <p class="card-text fs-7">
+                                            {{ str_replace(':count', $achievement->level, $config['description']) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                @empty
+                    <div class="col-12 text-center py-5">
+                        <h6 class="text-white-50 mb-2">
+                            No achievements unlocked yet. Stay consistent and keep going!
+                        </h6>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card achievement-card text-white">
-                        <div class="card-body">
-                            {{-- dibanding icon, better pake gambar --}}
-                            <i class="bi bi-trophy fs-1"></i>
-                            <h6 class="card-title">5 day streak!</h6>
-                            <p class="card-text fs-7">
-                                You’ve opened MINDTRACK for 5 days in a row. Good for you, Ace! Keep shining!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card achievement-card text-white">
-                        <div class="card-body">
-                            <i class="bi bi-journal-check fs-1"></i>
-                            <h6 class="card-title">Journal Starter!</h6>
-                            <p class="card-text fs-7">
-                                You wrote your first journal entry. Every reflection counts toward growth!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card achievement-card text-white">
-                        <div class="card-body">
-                            <i class="bi bi-person-arms-up fs-1"></i>
-                            <h6 class="card-title">5 day streak!</h6>
-                            <p class="card-text fs-7">
-                                You’ve opened MINDTRACK for 5 days in a row. Good for you, Ace! Keep shining!
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </div>

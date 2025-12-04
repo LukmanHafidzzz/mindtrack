@@ -1,14 +1,24 @@
+@php
+    $user = Auth::user();
+    $profile = $user->profile;
+@endphp
+
 <aside class="p-3 h-100 min-vh-100">
     <div class="d-flex align-items-center ">
         <div class="">
-            <div class="profile-pic">
-                {{-- <i class="bi bi-person-fill fs-1"></i> --}}
-                <img src="{{ asset("photoProfiles/profile-2.jpg") }}" alt="" srcset="" class="w-100">
+            <div class="profile-pic text-center">
+                @if($profile && $profile->profile_pic)
+                    <img src="{{ asset('storage/' . $profile->profile_pic) }}" alt="Profile Picture">
+                @else
+                    <i class="bi bi-person-fill fs-1"></i>
+                @endif
             </div>
         </div>
         <div class="ms-4">
-            <div class="fw-semibold">Simon the GOAT</div>
-            <div class="">Grade 9</div>
+            <div class="fw-semibold">{{ $user->name }}</div>
+            <div>
+                {{ $profile->grade ?? 'No Grade' }}
+            </div>
         </div>
     </div>
     <div class="side-devider my-2"></div>
@@ -108,7 +118,7 @@
 
         <ul class="dropdown-menu border-0 bg-transparent mx-4 w-75">
             <li>
-                <a href="{{ url('/profile') }}" class="text-decoration-none text-white">
+                <a href="{{ route('profile.index') }}" class="text-decoration-none text-white">
                     <div class="d-flex align-items-center gap-2 py-2 px-3 menu-box fs-7 {{ Request::is('profile*') ? 'active' : '' }}">
                         <div class="sub-icon-box"><i class="bi bi-person"></i></div>
                         <div>Profile</div>
@@ -116,9 +126,11 @@
                 </a>
             </li>
             <li>
-                <form action="" method="POST">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="border-0 bg-transparent text-white w-100 text-start p-0">
+                    <button type="submit"
+                        onclick="event.preventDefault(); this.closest('form').submit();"
+                        class="border-0 bg-transparent text-white w-100 text-start p-0">
                         <div class="d-flex align-items-center gap-2 py-2 px-3 menu-box fs-7">
                             <div class="sub-icon-box"><i class="bi bi-box-arrow-right"></i></div>
                             <div>Sign Out</div>

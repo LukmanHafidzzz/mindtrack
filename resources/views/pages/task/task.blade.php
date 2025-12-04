@@ -22,80 +22,90 @@
         </a>
     </div>
     <div class="row gy-3">
-        <div class="col-12">
-            <div class="card task-card text-white px-3 py-2">
-                <div class="card-body row align-items-center">
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                        <label class="custom-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="col">
-                        <h5 class="card-title mb-1">Biology</h5>
-                        <div>complete missing assignments</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="card task-card text-white px-3 py-2">
-                <div class="card-body row align-items-center">
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                        <label class="custom-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="col">
-                        <h5 class="card-title mb-1">Social Studies</h5>
-                        <div>learn chapter 7-11</div>
+        @forelse($tasks as $task)
+            <div class="col-12">
+                <div class="card task-card text-white px-3 py-2">
+                    <div class="card-body row align-items-center">
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <div class="d-flex justify-content-center align-items-center"
+                                data-bs-toggle="modal"
+                                data-bs-target="#completeModal{{ $task->id }}"
+                                style="cursor:pointer">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" {{ $task->is_completed ? 'checked disabled' : '' }}>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <h5 class="card-title mb-1">{{ $task->name }}</h5>
+                            <div>{{ $task->description }}</div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12">
-            <div class="card task-card text-white px-3 py-2">
-                <div class="card-body row align-items-center">
-                    <div class="col-1 d-flex justify-content-center align-items-center">
-                        <label class="custom-checkbox">
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="col">
-                        <h5 class="card-title mb-1">OWLYPIA</h5>
-                        <div>practice for local round</div>
+
+            <form action="{{ route('tasks.update', $task->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="modal confirm-modal fade" id="completeModal{{ $task->id }}" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content p-3">
+                            <div class="modal-body text-center">
+                                <h5>Mark this task as {{ $task->is_completed ? 'incomplete?' : 'complete?' }}</h5>
+                                <button type="submit" class="btn btn-primary mt-3">Yes</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </form>
+        @empty
+            <div class="col-12 text-center py-5">
+                <h6 class="text-white-50 mb-2">
+                    Your task list is empty for now.
+                </h6>
             </div>
-        </div>
-        
+        @endforelse
     </div>
 </div>
 
-<div class="modal task-modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="addTaskModalLabel">Add Task</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="taskName" placeholder="">
-                    <label for="taskName">Task Name</label>
+<form action="{{ route('tasks.store') }}" method="POST">
+    @csrf
+    <div class="modal task-modal fade" id="addTaskModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Add Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="taskDescription" placeholder="">
-                    <label for="taskDescription">Task Description</label>
+
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="taskName" placeholder="">
+                        <label>Task Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="taskDescription" placeholder="">
+                        <label>Task Description</label>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 @endsection
+@if(session('debug_achievement'))
+    <div class="px-5">
+        <div class="alert alert-info">
+            <strong>Debug:</strong> {{ session('debug_achievement') }}
+        </div>
+    </div>
+@endif

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Achievement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AchievementController extends Controller
 {
@@ -11,7 +13,13 @@ class AchievementController extends Controller
      */
     public function index()
     {
-        return view('pages.achievement.achievement');
+        $achievements = Achievement::where('user_id', Auth::id())
+            ->orderBy('category')
+            ->orderBy('level')
+            ->get()
+            ->groupBy('category');
+
+        return view('pages.achievement.achievement', compact('achievements'));
     }
 
     /**

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Journal;
+use App\Services\AchievementService;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class JournalController extends Controller
 {
@@ -11,7 +15,15 @@ class JournalController extends Controller
      */
     public function index()
     {
-        return view('pages.journal.journal');
+        $journals = Journal::where('user_id', Auth::id())
+            ->latest()
+            ->get();
+
+        $latestJournal = Journal::where('user_id', Auth::id())
+            ->latest()
+            ->first();
+
+        return view('pages.journal.journal', compact('journals', 'latestJournal'));
     }
 
     /**
@@ -27,7 +39,29 @@ class JournalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'journal_file' => 'required|file|mimes:pdf|max:5120',
+        ]);
+
+        $path = $request->file('journal_file')
+            ->store('journals', 'public');
+
+        Journal::create([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'journal_file' => $path,
+        ]);
+
+        $totalJournal = Journal::where('user_id', Auth::id())->count();
+
+        AchievementService::check(
+            Auth::id(),
+            'journal',
+            $totalJournal
+        );
+
+        return redirect()->back()->with('success', 'Journal added successfully');
     }
 
     /**
