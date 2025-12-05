@@ -10,7 +10,7 @@ use App\Http\Controllers\TimeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('new-welcome');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {

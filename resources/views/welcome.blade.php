@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mindtrack</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>MindTrack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
-    @yield('styles')
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
-<body class="container-fluid p-0">
+<body>
+    <body class="container-fluid p-0">
     <div class="container text-center vh-100 d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col"></div>
             <div class="col-9">
-                <section class="text-center text-white px-5">
-                    <div class="fs-1 fw-bold mb-4">
-                        MindTrack: Log Your Focus. Track Your Feelings. Find Your Balance.
+                <div class="content-wrapper d-flex align-items-center">
+                    <div class="container text-center">
+                        <h1 class="hero-title display-4 mb-4">
+                            MindTrack: Log Your Focus. Track Your Feelings. Find Your Balance.
+                        </h1>
+                        <p class="hero-subtitle fs-5 mb-5">
+                            The all-in-one companion for students who know that true performance 
+                            is built on both productivity and mental wellness.
+                        </p>
+                        <div class="d-flex gap-3 justify-content-center flex-wrap">
+                            <a href="{{ route('register') }}" class="btn btn-primary-custom px-5 py-3">
+                                Signup
+                            </a>
+                            <a href="{{ route('login') }}" class="btn btn-secondary-custom px-5 py-3">
+                                Login
+                            </a>
+                        </div>
                     </div>
-                    <div class="px-5">
-                        The all-in-one companion for students who know that true performance is built on both productivity and mental wellness.
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center gap-3">
-                        <a href="{{ route('register') }}" class="btn btn-signup mt-4">
-                            Signup
-                        </a>
-                        <a href="{{ route('login') }}" class="btn btn-login mt-4">
-                            Login
-                        </a>
-                    </div>
-                </section>
+                </div>
             </div>
             <div class="col"></div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
