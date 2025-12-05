@@ -19,7 +19,7 @@
                 <div class="content-wrapper d-flex align-items-center">
                     <div class="container text-center">
                         <h1 class="hero-title display-4 mb-4">
-                            MindTrack: Log Your Focus. Track Your Feelings. Find Your Balance.
+                            MindTracks: Log Your Focus. Track Your Feelings. Find Your Balance.
                         </h1>
                         <p class="hero-subtitle fs-5 mb-5">
                             The all-in-one companion for students who know that true performance 
