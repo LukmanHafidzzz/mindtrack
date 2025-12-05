@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    // 'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://mindtrack-production-06e4.up.railway.app'),
 
     /*
     |--------------------------------------------------------------------------
