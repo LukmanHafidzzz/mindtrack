@@ -6,12 +6,9 @@
     <title>MindTrack</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- Debug: Cek URL yang di-generate -->
-    <!-- URL: {{ asset('css/welcome.css') }} -->
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
-<body>
-    <body class="container-fluid p-0">
+<body class="container-fluid p-0">
     <div class="container text-center vh-100 d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col"></div>
@@ -19,7 +16,7 @@
                 <div class="content-wrapper d-flex align-items-center">
                     <div class="container text-center">
                         <h1 class="hero-title display-4 mb-4">
-                            MindTracks: Log Your Focus. Track Your Feelings. Find Your Balance.
+                            MindTrack: Log Your Focus. Track Your Feelings. Find Your Balance.
                         </h1>
                         <p class="hero-subtitle fs-5 mb-5">
                             The all-in-one companion for students who know that true performance 
